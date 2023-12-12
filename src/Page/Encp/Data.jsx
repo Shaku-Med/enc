@@ -217,7 +217,18 @@ let Data = ({ isenc }) => {
     
     return (
         <>
-            {
+            <div onDragOver={e => { 
+                e.preventDefault()
+                setisd(true)
+            }} onDrop={e => { 
+                e.preventDefault()
+                setisd(false)
+                handleChange(e, true)
+                }} onDragLeave={e => { 
+            setisd(false)
+                }} className="mainfinaosiuphere w-full">
+                
+                 {
                 isd ? 
                      <div className="loaidnkidimsds fixed flex items-center justify-center p-2 backdrop-blur-md top-0 left-0 z-[1000000] opacity-[.6] overflow-hidden h-full w-full bg-[var(--basebg)]">
                 <div className="aidnlakcentia uppercase text-center text-[30px] font-bold">
@@ -225,14 +236,7 @@ let Data = ({ isenc }) => {
                 </div>
             </div> : ''
            }
-            <div onDragOver={e => { 
-                e.preventDefault()
-                setisd(true)
-            }} onDrop={e => { 
-                e.preventDefault()
-                handleChange(e, true)
-                setisd(false)
-        }} className="mainfinaosiuphere w-full">
+
             <div className="upperpathiand w-full">
               
                 <div className="fileuploadpathsd">
