@@ -26,8 +26,8 @@ let Data = ({ isenc }) => {
 
     //
 
-    const handleChange = async (e) => { 
-        let ft = e.target.files[0]
+    const handleChange = async (e, isdata) => { 
+        let ft = isdata ? e.dataTransfer.files[0] : e.target.files[0]
         if (ft) { 
             let reader = new FileReader()
             if (isenc) { 
@@ -48,6 +48,7 @@ let Data = ({ isenc }) => {
                 }
                 // 
                 setfile([ar])
+                toast.success(`File selected successfully`)
             }
             // 
             reader.readAsArrayBuffer(ft)
@@ -55,6 +56,7 @@ let Data = ({ isenc }) => {
             else { 
                 reader.onloadend = () => { 
                     setinput(reader.result)
+                    toast.success(`File selected successfully`);
                 }
                 reader.readAsText(ft)
             }
@@ -210,9 +212,25 @@ let Data = ({ isenc }) => {
             toast.info(`Some information are missing. Please check if you've entered your encryption key and securitykey as they're required.`)
         }
     }
+
+    const [isd, setisd] = useState(false)
     
     return (
-        <div className="mainfinaosiuphere w-full">
+        <>
+            {
+                isd ? 
+                     <div className="loaidnkidimsds fixed flex items-center justify-center p-2 backdrop-blur-md top-0 left-0 z-[1000000] opacity-[.6] overflow-hidden h-full w-full bg-[var(--basebg)]">
+                <div className="aidnlakcentia uppercase text-center text-[30px] font-bold">
+                    Drop your file Here
+                </div>
+            </div> : ''
+           }
+            <div onDragOver={e => { 
+            e.preventDefault()
+            }} onDrop={e => { 
+                e.preventDefault()
+                handleChange(e, true)
+        }} className="mainfinaosiuphere w-full">
             <div className="upperpathiand w-full">
               
                 <div className="fileuploadpathsd">
@@ -226,9 +244,15 @@ let Data = ({ isenc }) => {
                       </select> : ''
                       } */}
                                     <div className="inputcontainer w-full">
-                                        <input onChange={sub ? e => {} : handleChange} type="file" name="" id="file" className="hidden" />
-                                        <label className=' uppercase w-full flex items-center justify-center shadow-md p-2 bg-success rounded-md' htmlFor="file">
-                                            Choose {choose === 'file' ? 'Files' : choose}
+                                        <input onChange={sub ? e => {} : e => {handleChange(e, false)}} type="file" name="" id="file" className="hidden" />
+                                        <label className=' uppercase gap-2 w-full flex items-center justify-center shadow-md p-2 bg-success rounded-md' htmlFor="file">
+                                        <span>
+                                             Choose {choose === 'file' ? 'Files' : choose}
+                                        </span>
+                                        {
+                                            file.length > 0 ? 
+                                                <span>({file.length})</span> : ''
+                                        }
                                         </label>
                                     </div>
                                 </div>
@@ -269,6 +293,7 @@ let Data = ({ isenc }) => {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
