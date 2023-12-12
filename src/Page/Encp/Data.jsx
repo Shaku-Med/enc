@@ -224,8 +224,6 @@ let Data = ({ isenc }) => {
                 e.preventDefault()
                 setisd(false)
                 handleChange(e, true)
-                }} onDragLeave={e => { 
-            setisd(false)
                 }} className="mainfinaosiuphere w-full">
                 
                  {
