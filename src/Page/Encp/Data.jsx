@@ -113,7 +113,7 @@ let Data = ({ isenc }) => {
                 // 
                 a.click()
                 // 
-                if(!isMobile){ 
+                if (!isMobile) {
                     window.open(`${URL.createObjectURL(eb)}`, `_blank`)
                 }
                 // 
@@ -134,14 +134,36 @@ let Data = ({ isenc }) => {
                         // 
                         let blob = new Blob([bl], { type: dc.file[0].type })
 
-                        if(!isMobile){ 
+                        if (!isMobile) {
                             window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                        }
+                        else {
+                            let a = document.createElement('a')
+                            a.download = `${uuid().toUpperCase().split('-').join('')}`
+                            a.href = `${URL.createObjectURL(blob)}`
+                            // 
+                            a.click()
+                            // 
+                            setTimeout(() => {
+                                window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                            }, 1*1200);
                         }
                     }
                     else {
                         let blob = new Blob([dc.input], { type: 'text/plain' })
-                        if(!isMobile){ 
+                        if (!isMobile) {
                             window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                        }
+                        else {
+                            let a = document.createElement('a')
+                            a.download = `${uuid().toUpperCase().split('-').join('')}`
+                            a.href = `${URL.createObjectURL(blob)}`
+                            // 
+                            a.click()
+                            // 
+                            setTimeout(() => {
+                                window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                            }, 1*1200);
                         }
                     }
                 }
@@ -154,14 +176,36 @@ let Data = ({ isenc }) => {
                             // 
                             let blob = new Blob([bl], { type: dc.file[0].type })
 
-                            if(!isMobile){ 
+                            if (!isMobile) {
                                 window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                            }
+                            else {
+                                let a = document.createElement('a')
+                                a.download = `${uuid().toUpperCase().split('-').join('')}`
+                                a.href = `${URL.createObjectURL(blob)}`
+                                // 
+                                a.click()
+                                // 
+                                setTimeout(() => {
+                                    window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                                }, 1*1200);
                             }
                         }
                         else {
                             let blob = new Blob([dc.input], { type: 'text/plain' })
-                            if(!isMobile){ 
+                            if (!isMobile) {
                                 window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                            }
+                            else {
+                                let a = document.createElement('a')
+                                a.download = `${uuid().toUpperCase().split('-').join('')}`
+                                a.href = `${URL.createObjectURL(blob)}`
+                                // 
+                                a.click()
+                                // 
+                                setTimeout(() => {
+                                    window.open(`${URL.createObjectURL(blob)}`, `_blank`)
+                                }, 1*1200);
                             }
                         }
                     }
