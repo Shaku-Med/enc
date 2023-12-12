@@ -226,10 +226,12 @@ let Data = ({ isenc }) => {
             </div> : ''
            }
             <div onDragOver={e => { 
-            e.preventDefault()
+                e.preventDefault()
+                setisd(true)
             }} onDrop={e => { 
                 e.preventDefault()
                 handleChange(e, true)
+                setisd(false)
         }} className="mainfinaosiuphere w-full">
             <div className="upperpathiand w-full">
               
