@@ -113,7 +113,7 @@ let Data = ({ isenc }) => {
                 // 
                 a.click()
                 // 
-                window.open(`${URL.createObjectURL(eb)}`, `_blank`, `left=500,top=200,width=300,height=300`)
+                window.open(`${URL.createObjectURL(eb)}`, `_blank`)
                 // 
                 alert(`Data Encrypted Successfully.`)
                 toast.success(`Data Encrypted Successfully.`)
@@ -132,11 +132,11 @@ let Data = ({ isenc }) => {
                         // 
                         let blob = new Blob([bl], { type: dc.file[0].type })
 
-                        window.open(`${URL.createObjectURL(blob)}`, `_blank`, `left=500,top=200,width=500,height=500`)
+                        window.open(`${URL.createObjectURL(blob)}`, `_blank`)
                     }
                     else {
                         let blob = new Blob([dc.input], { type: 'text/plain' })
-                        window.open(`${URL.createObjectURL(blob)}`, `_blank`, `left=500,top=200,width=300,height=300`)
+                        window.open(`${URL.createObjectURL(blob)}`, `_blank`)
                     }
                 }
                 else {
@@ -148,11 +148,11 @@ let Data = ({ isenc }) => {
                             // 
                             let blob = new Blob([bl], { type: dc.file[0].type })
 
-                            window.open(`${URL.createObjectURL(blob)}`, `_blank`, `left=500,top=200,width=500,height=500`)
+                            window.open(`${URL.createObjectURL(blob)}`, `_blank`)
                         }
                         else {
                             let blob = new Blob([dc.input], { type: 'text/plain' })
-                            window.open(`${URL.createObjectURL(blob)}`, `_blank`, `left=500,top=200,width=300,height=300`)
+                            window.open(`${URL.createObjectURL(blob)}`, `_blank`)
                         }
                     }
                     else {
@@ -186,7 +186,7 @@ let Data = ({ isenc }) => {
             // 
             a.click()
             // 
-            window.open(`${URL.createObjectURL(eb)}`, `_blank`, `left=500,top=200,width=300,height=300`)
+            window.open(`${URL.createObjectURL(eb)}`, `_blank`)
             // 
             alert(`Data Encrypted Successfully.`)
             toast.success(`Data Encrypted Successfully.`)
