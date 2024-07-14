@@ -18,7 +18,7 @@ let Home = () => {
                 }} exit={{
                 opacity: .6,
                 scale: 2
-            }} className={`containerbox overflow-auto bg-[var(--basebg)] h-fit max-h-[500px] p-2 rounded-lg shadow-md w-fit max-w-[600px] brd`}>
+            }} className={`containerbox overflow-auto bg-[var(--basebg)] h-fit max-h-[700px] p-2 rounded-lg shadow-md w-fit max-w-[700px] brd`}>
                 {
                     !toenc ?
                         <Decp isenc={toenc} /> :
